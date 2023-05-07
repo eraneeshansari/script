@@ -21,4 +21,4 @@ EOF
 #restart and verify haproxy
 
 systemctl restart haproxy
-systemctl status haproxy
+
