@@ -1,3 +1,15 @@
+#!/bin/bash
+
+echo "Enter private IP address of master1 node:"
+read master1
+
+echo "Enter private IP address of master2 node:"
+read master2
+
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+#install ha-proxy
 sudo apt-get install haproxy -y
 
 
@@ -16,8 +28,3 @@ backend be-apiserver
 
        server master1 $master1:6443 check
        server master2 $master2:6443 check
-EOF
-
-#restart and verify haproxy
-
-systemctl restart haproxy
