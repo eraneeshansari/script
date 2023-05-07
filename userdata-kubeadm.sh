@@ -31,3 +31,7 @@ sudo echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /et
 sudo apt-get update
 sudo apt-get install -y kubelet=1.25.0-00 kubeadm=1.25.0-00 kubectl=1.25.0-00
 sudo apt-mark hold kubelet kubeadm kubectl
+
+
+####   install CNI after setup ######
+#kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml 
